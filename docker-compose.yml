@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    container_name: mapa_53-2021
+    image: php:8.0.9-apache
+    volumes:
+      - '.:/var/www/html'
+    ports:
+      - '80:80'
