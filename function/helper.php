@@ -46,3 +46,10 @@ if (!function_exists('sanitize_string')) {
         return filter_var($string, FILTER_SANITIZE_STRING);
     }
 }
+
+if (!function_exists('get_product_image')) {
+    function get_product_image(array $product): string
+    {
+        return 'images/'. $product['id'].'/'. reset($product['images']);
+    }
+}
