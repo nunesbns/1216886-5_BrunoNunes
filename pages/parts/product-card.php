@@ -1,4 +1,4 @@
-<div class="col col-md-4">
+<div class="col-md-6 col-lg-4">
     <div class="card my-2">
         <div class="product-img" style="background-image:url('<?=get_product_image($product)?>')"></div>
         <div class="card-body">
