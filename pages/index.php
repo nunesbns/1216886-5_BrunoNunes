@@ -6,7 +6,7 @@ require('pages/parts/header.php');
 include('pages/parts/search-bar.php');
 
 $products = filter_products(include('dados/products.php'));
-$products = filter_products($products);
+[$products, $total_pages] = paginate($products, $app['products_per_page']);
 
 if (!empty($_GET['s'])):
     ?>

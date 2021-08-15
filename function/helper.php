@@ -48,8 +48,32 @@ if (!function_exists('sanitize_string')) {
 }
 
 if (!function_exists('get_product_image')) {
+    /**
+     * Get firth image from product images array
+     * @param array $product
+     * @return string
+     */
     function get_product_image(array $product): string
     {
         return 'images/'. $product['id'].'/'. reset($product['images']);
+    }
+}
+
+if (!function_exists('paginate')) {
+    /**
+     * Paginate product
+     * @param array $products
+     * @return array
+     */
+    function paginate(array $products, int $products_per_page): array
+    {
+        $page = ($_GET['page']) ?? 1;
+        $limit = $products_per_page;
+        $total_pages = ceil(count($products)/$limit);
+        $page = max($page, 1);
+        $page = min($page, $total_pages);
+        $offset = ($page -1) * $limit;
+        $products = array_slice($products, $offset, $limit);
+        return [$products, $total_pages];
     }
 }
