@@ -61,19 +61,19 @@ if (!function_exists('get_product_image')) {
 
 if (!function_exists('paginate')) {
     /**
-     * Paginate product
-     * @param array $products
+     * Paginate array
+     * @param array $items
      * @return array
      */
-    function paginate(array $products, int $products_per_page): array
+    function paginate(array $items, int $items_per_page): array
     {
         $page = ($_GET['page']) ?? 1;
-        $limit = $products_per_page;
-        $total_pages = ceil(count($products)/$limit);
+        $limit = $items_per_page;
+        $total_pages = ceil(count($items)/$limit);
         $page = max($page, 1);
         $page = min($page, $total_pages);
         $offset = ($page -1) * $limit;
-        $products = array_slice($products, $offset, $limit);
-        return [$products, $total_pages];
+        $items = array_slice($items, $offset, $limit);
+        return [$items, $total_pages];
     }
 }
