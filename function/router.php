@@ -6,7 +6,7 @@ if(!function_exists('load_content')) {
      */
     function load_content(){
         $uri = $_SERVER["REQUEST_URI"];
-        $path = array_filter(explode('/', $uri)) ?? ['home'];
+        $path = array_filter(explode('/', $uri)) ?: ['home'];
 
         switch (reset($path)) {
             case 'home':
