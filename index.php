@@ -1,3 +1,3 @@
 <?php
-    require('pages/parts/header.php');
-    require('pages/parts/footer.php');
+    require('function/router.php');
+    load_content();
