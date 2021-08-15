@@ -3,14 +3,14 @@
 return [
     [
         'label' => 'Home',
-        'route' => 'home'
+        'slug' => 'home'
     ],
     [
         'label' => 'Quem somos',
-        'route' => 'quem-somos'
+        'slug' => 'quem-somos'
     ],
     [
         'label' => 'Contato',
-        'route' => 'contato'
+        'slug' => 'contato'
     ]
 ];
