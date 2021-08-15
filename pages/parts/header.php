@@ -18,8 +18,8 @@ require('function/helper.php');
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-light bg-light ">
+    <div class="container-md px-5">
         <a class="navbar-brand text-primary" href="/"><i class="fas fa-store"></i> <?= $app['site_name'] ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@ require('function/helper.php');
         </div>
     </div>
 </nav>
-<div class="container-fluid p-5">
+<div class="container-md p-5">
     <div class="row">
         <div class="col pb-3">
             <h1 class="text-center text-primary"><?= $page_title ?></h1>
