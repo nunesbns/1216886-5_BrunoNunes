@@ -33,4 +33,5 @@ if (!empty($_GET['s'])):
     </div>
 
 <?php
+require('pages/parts/pagination.php');
 require('pages/parts/footer.php');
