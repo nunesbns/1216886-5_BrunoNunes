@@ -10,7 +10,7 @@ if(!function_exists('load_content')) {
         $base_path = reset($path);
 
         switch ($base_path) {
-            case 'home' OR strpos($base_path,'?s='):
+            case ($base_path === 'home' || strpos($base_path,'?s=')):
                 include_once('pages/index.php');
                 break;
             case 'quem-somos':
