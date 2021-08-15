@@ -7,16 +7,17 @@ if(!function_exists('load_content')) {
     function load_content(){
         $uri = $_SERVER["REQUEST_URI"];
         $path = array_filter(explode('/', $uri)) ?: ['home'];
+        $base_path = reset($path);
 
-        switch (reset($path)) {
-            case 'home':
+        switch ($base_path) {
+            case 'home' OR strpos($base_path,'?s='):
                 include_once('pages/index.php');
                 break;
             case 'quem-somos':
                 include_once('pages/page.php');
                 break;
             case 'contato':
-                include_once('pages/contato.php');
+                include_once('pages/contact.php');
                 break;
             case 'produto':
                 include_once('pages/single.php');
