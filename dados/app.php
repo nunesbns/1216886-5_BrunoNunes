@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site_name' => 'Back-end Doceria',
-    'products_per_page' => 8
+    'site_name' => 'Bacandy',
+    'products_per_page' => 6
 ];
