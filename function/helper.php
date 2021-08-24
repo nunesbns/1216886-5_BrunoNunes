@@ -9,7 +9,7 @@ if (!function_exists('is_link_active')) {
      */
     function is_link_active($path, $slug): string
     {
-        return (reset($path) === $slug) ? 'active' : '';
+        return (reset($path) === $slug) ? 'active bg-primary text-light' : '';
     }
 }
 
@@ -61,8 +61,8 @@ if (!function_exists('get_product_image')) {
 
 if (!function_exists('paginate')) {
     /**
-     * Paginate array
      * @param array $items
+     * @param int $items_per_page
      * @return array
      */
     function paginate(array $items, int $items_per_page): array
