@@ -16,6 +16,7 @@ return [
     [
         'label' => 'Carrinho',
         'slug' => 'carrinho',
-        'icon' => '<i class="fas fa-shopping-cart"></i>'
+        'icon' => '<i class="fas fa-shopping-cart"></i>',
+        'class' => 'text-primary'
     ]
 ];

@@ -26,11 +26,11 @@ require('function/helper.php');
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav mx-lg-5">
                 <?php
                 foreach ($menu as $item):
                     ?>
-                    <a class="nav-link <?= is_link_active($path, $item['slug']) ?>"
+                    <a class="nav-link <?= is_link_active($path, $item['slug']) ?>  <?php if(array_key_exists('class', $item))echo $item['class'];?>"
                        href="/<?= $item['slug'] ?>">
                         <?php if(array_key_exists('icon', $item))echo $item['icon'];?>
                         <?= $item['label'] ?>
