@@ -12,7 +12,7 @@ if (!empty($_GET['s'])):
     ?>
     <div class="row pt-5">
         <div class="col">
-            <h2 class="text-center">Resultados para: <?= sanitize_string($_GET['s']) ?></h2>
+            <h2 class="text-center">Resultados para <span class="text-primary"><?= sanitize_string($_GET['s']) ?></span></h2>
         </div>
     </div>
 <?php endif; ?>
