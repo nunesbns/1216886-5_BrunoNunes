@@ -22,6 +22,9 @@ if(!function_exists('load_content')) {
             case 'produto':
                 include_once('pages/single.php');
                 break;
+            case 'carrinho':
+                include_once('pages/cart.php');
+                break;
             default: include_once('pages/404.php');
         }
     }

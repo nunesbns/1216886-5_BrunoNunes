@@ -12,5 +12,10 @@ return [
     [
         'label' => 'Contato',
         'slug' => 'contato'
+    ],
+    [
+        'label' => 'Carrinho',
+        'slug' => 'carrinho',
+        'icon' => '<i class="fas fa-shopping-cart"></i>'
     ]
 ];

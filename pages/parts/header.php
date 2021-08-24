@@ -31,7 +31,10 @@ require('function/helper.php');
                 foreach ($menu as $item):
                     ?>
                     <a class="nav-link <?= is_link_active($path, $item['slug']) ?>"
-                       href="/<?= $item['slug'] ?>"><?= $item['label'] ?></a>
+                       href="/<?= $item['slug'] ?>">
+                        <?php if(array_key_exists('icon', $item))echo $item['icon'];?>
+                        <?= $item['label'] ?>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </div>
