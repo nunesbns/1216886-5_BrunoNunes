@@ -2,5 +2,5 @@
 
 return [
     'site_name' => 'Bacandy',
-    'products_per_page' => 6
+    'products_per_page' => 3
 ];
