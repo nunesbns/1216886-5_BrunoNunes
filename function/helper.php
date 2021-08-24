@@ -49,7 +49,7 @@ if (!function_exists('sanitize_string')) {
 
 if (!function_exists('get_product_image')) {
     /**
-     * Get firth image from product images array
+     * Get first image from product images array
      * @param array $product
      * @return string
      */
@@ -75,5 +75,17 @@ if (!function_exists('paginate')) {
         $offset = ($page -1) * $limit;
         $items = array_slice($items, $offset, $limit);
         return [$items, $total_pages];
+    }
+}
+
+
+if(!function_exists('float_to_currency')) {
+    /**
+     * Parse float value to currency
+     * @param $float
+     * @return string
+     */
+    function float_to_currency($float): string{
+        return 'R$ ' . number_format($float, 2, ',', '.');
     }
 }
