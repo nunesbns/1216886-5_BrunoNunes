@@ -34,5 +34,7 @@ function loadCart() {
 
     if (cart_cookie.length === 2) {
         return JSON.parse(cart_cookie.pop().split(';').shift());
+    } else {
+        return [];
     }
 }
