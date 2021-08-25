@@ -55,7 +55,7 @@ if (!function_exists('get_product_image')) {
      */
     function get_product_image(array $product): string
     {
-        return 'images/'. $product['id'].'/'. reset($product['images']);
+        return 'images/' . $product['id'] . '/' . reset($product['images']);
     }
 }
 
@@ -69,23 +69,41 @@ if (!function_exists('paginate')) {
     {
         $page = ($_GET['page']) ?? 1;
         $limit = $items_per_page;
-        $total_pages = ceil(count($items)/$limit);
+        $total_pages = ceil(count($items) / $limit);
         $page = max($page, 1);
         $page = min($page, $total_pages);
-        $offset = ($page -1) * $limit;
+        $offset = ($page - 1) * $limit;
         $items = array_slice($items, $offset, $limit);
         return [$items, $total_pages];
     }
 }
 
 
-if(!function_exists('float_to_currency')) {
+if (!function_exists('float_to_currency')) {
     /**
      * Parse float value to currency
      * @param $float
      * @return string
      */
-    function float_to_currency($float): string{
+    function float_to_currency($float): string
+    {
         return 'R$ ' . number_format($float, 2, ',', '.');
+    }
+}
+
+if (!function_exists('get_product_by_id')) {
+    /**
+     * @param $id
+     * @return mixed
+     */
+    function get_product_by_id($id): array
+    {
+        $products = include('dados/products.php');
+
+        $product = array_filter($products, function ($item) use ($id) {
+            return str_contains($item['id'], $id);
+        });
+
+        return reset($product);
     }
 }

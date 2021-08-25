@@ -38,3 +38,15 @@ function loadCart() {
         return [];
     }
 }
+
+function removeFromCart(productId) {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].productId === productId) {
+            cart.splice(i,1);
+            break;
+        }
+    }
+    document.cookie = "bacandy_cart=" + JSON.stringify(cart);
+
+    document.location.reload();
+}
