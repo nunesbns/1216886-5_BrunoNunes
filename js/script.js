@@ -26,6 +26,7 @@ function addToCart(productId, minOrder) {
     document.cookie = "bacandy_cart=" + JSON.stringify(cart);
 
     alert("Produto adicionado ao carrinho!");
+    document.location.reload();
 }
 
 function loadCart() {
