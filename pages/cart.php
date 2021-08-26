@@ -1,10 +1,9 @@
 <?php
 
 $page_title = "Carrinho";
+$contact = include "dados/contact.php";
 
 require('pages/parts/header.php');
-
-$cart = isset($_COOKIE['bacandy_cart']) ? json_decode($_COOKIE['bacandy_cart'], true) : false;
 
 if (!$cart):
     ?>
@@ -32,7 +31,7 @@ else:
             $total_cart += $total;
             ?>
             <tr id="cart-product-<?=$item['productId']?>">
-                <td><?= $item['clientOrder'] ?></td>
+                <td><?= (int)$item['clientOrder'] ?></td>
                 <td><?= $product['title'] ?></td>
                 <td><?= float_to_currency($product['price']) ?></td>
                 <td><?= float_to_currency($total); ?></td>
@@ -44,6 +43,14 @@ else:
         <div class="col">
             <p class="text-center h2"><strong>Total: </strong><span
                         class="text-primary"><?= float_to_currency($total_cart) ?></span></p>
+        </div>
+    </div>
+
+    <div class="row p-5 bg-light">
+        <div class="col text-center">
+            <h3 class="text-center">Encomendar</h3>
+            <a class="btn btn-lg btn-success" href="https://wa.me/<?=$contact['whatsapp']?>?text=<?=get_text_cart($cart)?>"><i class="fab fa-whatsapp"></i></a>
+            <a class="btn btn-lg btn-secondary" href="mailto:<?=$contact['email']?>?subject=Encomenda de doces&body=<?=get_text_cart($cart)?>"><i class="fas fa-envelope"></i></a>
         </div>
     </div>
 <?php

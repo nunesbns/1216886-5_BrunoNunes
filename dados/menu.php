@@ -17,6 +17,7 @@ return [
         'label' => 'Carrinho',
         'slug' => 'carrinho',
         'icon' => '<i class="fas fa-shopping-cart"></i>',
-        'class' => 'text-primary'
+        'class' => 'text-primary',
+        'cart_count' => count($cart)
     ]
 ];

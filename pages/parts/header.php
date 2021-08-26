@@ -1,7 +1,8 @@
 <?php
+$cart = isset($_COOKIE['bacandy_cart']) ? json_decode($_COOKIE['bacandy_cart'], true) : false;
+
 $app = include('dados/app.php');
 $menu = include('dados/menu.php');
-
 require('function/helper.php');
 ?>
 
@@ -32,6 +33,7 @@ require('function/helper.php');
                     ?>
                     <a class="nav-link <?= is_link_active($path, $item['slug']) ?>  <?php if(array_key_exists('class', $item))echo $item['class'];?>"
                        href="/<?= $item['slug'] ?>">
+                        <?php if(array_key_exists('cart_count', $item) && $item['cart_count'] > 0)echo $item['cart_count'];?>
                         <?php if(array_key_exists('icon', $item))echo $item['icon'];?>
                         <?= $item['label'] ?>
                     </a>

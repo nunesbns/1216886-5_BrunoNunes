@@ -61,6 +61,7 @@ if (!function_exists('get_product_image')) {
 
 if (!function_exists('paginate')) {
     /**
+     * Paginate given items
      * @param array $items
      * @param int $items_per_page
      * @return array
@@ -93,6 +94,7 @@ if (!function_exists('float_to_currency')) {
 
 if (!function_exists('get_product_by_id')) {
     /**
+     * Get a product by id
      * @param $id
      * @return mixed
      */
@@ -105,5 +107,29 @@ if (!function_exists('get_product_by_id')) {
         });
 
         return reset($product);
+    }
+}
+
+if (!function_exists('get_text_cart')) {
+
+    /**
+     * Return cart items in string format
+     * @param $cart
+     * @return string
+     */
+    function get_text_cart($cart): string
+    {
+        $total_cart = 0;
+        $text = "Olá, gostaria de encomendar o pedido abaixo:%0a%0a";
+        foreach ($cart as $item) {
+            $product = get_product_by_id($item['productId']);
+            $total = (float)$item['clientOrder'] * $product['price'];
+            $total_cart += $total;
+
+            $text .= (float)$item['clientOrder'] . " un. ". $product['title'] . " - " . float_to_currency($total) . "%0a";
+        }
+        $text .= "TOTAL: " . float_to_currency($total_cart);
+
+        return $text;
     }
 }
