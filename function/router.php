@@ -14,7 +14,7 @@ if(!function_exists('load_content')) {
                 include_once('pages/index.php');
                 break;
             case 'quem-somos':
-                include_once('pages/page.php');
+                include_once('pages/about-us.php');
                 break;
             case 'contato':
                 include_once('pages/contact.php');
