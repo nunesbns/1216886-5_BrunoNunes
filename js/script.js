@@ -52,10 +52,3 @@ function removeFromCart(productId) {
     document.location.reload();
 }
 
-// MAPS
-let map = L.map('mapid').setView([-15.800638226809617, -47.89369674456748], 13);
-let marker = L.marker([-15.800638226809617, -47.89369674456748]).addTo(map);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-}).addTo(map);
