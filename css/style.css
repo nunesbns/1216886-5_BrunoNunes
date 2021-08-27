@@ -6,16 +6,20 @@
     background-repeat: no-repeat;
 }
 
-.text-primary, .page-link{
-    color: #ce1ca6!important;
+.text-primary, .page-link {
+    color: #ce1ca6 !important;
 }
 
-.text-light{
-    color: #fff!important;
+.text-light {
+    color: #fff !important;
 }
 
 .btn-primary, .bg-primary {
     color: #fff;
-    background-color: #ce1ca6!important;
-    border-color: #ce1ca6!important;
+    background-color: #ce1ca6 !important;
+    border-color: #ce1ca6 !important;
+}
+
+#mapid {
+    height: 280px;
 }

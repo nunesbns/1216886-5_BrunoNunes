@@ -1,7 +1,7 @@
 <?php
 
 $page_title = "Carrinho";
-$contact = include "dados/contact.php";
+
 
 require('pages/parts/header.php');
 

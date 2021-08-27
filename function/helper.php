@@ -133,3 +133,23 @@ if (!function_exists('get_text_cart')) {
         return $text;
     }
 }
+
+if (!function_exists('format_phone')) {
+
+    /**
+     * Return formatted phone
+     * @param $phone
+     * @return string
+     */
+    function format_phone($phone): string
+    {
+        $formatted_phone = preg_replace('/[^0-9]/', '', substr($phone, 2));
+        $matches = [];
+        preg_match('/^([0-9]{2})([0-9]{4,5})([0-9]{4})$/', $formatted_phone, $matches);
+        if ($matches) {
+            return '('.$matches[1].') '.$matches[2].'-'.$matches[3];
+        }
+
+        return $formatted_phone;
+    }
+}
