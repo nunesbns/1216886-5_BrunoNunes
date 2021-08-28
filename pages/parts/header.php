@@ -1,5 +1,5 @@
 <?php
-$cart = isset($_COOKIE['bacandy_cart']) ? json_decode($_COOKIE['bacandy_cart'], true) : false;
+$cart = isset($_COOKIE['bacandy_cart']) ? json_decode($_COOKIE['bacandy_cart'], true) : [];
 
 $app = include('dados/app.php');
 $menu = include('dados/menu.php');

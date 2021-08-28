@@ -94,16 +94,18 @@ if (!function_exists('float_to_currency')) {
 
 if (!function_exists('get_product_by_id')) {
     /**
-     * Get a product by id
-     * @param $id
-     * @return mixed
+     * Get product by id or given key
+     * @param string $id
+     * @param string|null $key
+     * @return array
      */
-    function get_product_by_id($id): array
+    function get_product_by_id(string $id, string $key = null): array
     {
         $products = include('dados/products.php');
+        $key = $key ?? 'id';
 
-        $product = array_filter($products, function ($item) use ($id) {
-            return str_contains($item['id'], $id);
+        $product = array_filter($products, function ($item) use ($id, $key) {
+            return str_contains($item[$key], $id);
         });
 
         return reset($product);
@@ -151,5 +153,21 @@ if (!function_exists('format_phone')) {
         }
 
         return $formatted_phone;
+    }
+}
+
+if (!function_exists('get_current_product')) {
+
+    /**
+     * Get product from current URI
+     * @return array|null
+     */
+    function get_current_product(): ? array
+    {
+        $product_uri = $_SERVER["REQUEST_URI"];
+        $path = array_filter(explode('/', $product_uri)) ?: ['home'];
+
+        return get_product_by_id($path[array_key_last($path)], 'slug');
+
     }
 }

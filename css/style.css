@@ -1,9 +1,13 @@
-.product-img {
+.product-img, .carousel-item {
     width: 100%;
     height: 200px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.carousel-item {
+    height: 300px;
 }
 
 .text-primary, .page-link {
