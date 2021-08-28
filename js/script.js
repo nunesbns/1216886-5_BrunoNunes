@@ -23,7 +23,7 @@ function addToCart(productId, minOrder) {
         });
     }
 
-    document.cookie = "bacandy_cart=" + JSON.stringify(cart);
+    document.cookie = "bacandy_cart=" + JSON.stringify(cart) + ";path=/";
 
     alert("Produto adicionado ao carrinho!");
     document.location.reload();
@@ -47,7 +47,7 @@ function removeFromCart(productId) {
             break;
         }
     }
-    document.cookie = "bacandy_cart=" + JSON.stringify(cart);
+    document.cookie = "bacandy_cart=" + JSON.stringify(cart) + ";path=/";
 
     document.location.reload();
 }
